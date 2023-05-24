@@ -1,0 +1,108 @@
+#mainbody{
+	background-image:url("home11.avif");
+	background-repeat: no-repeat;
+	background-size:cover;
+}o
+
+
+
+h1{
+			text-align:center;
+			color:red;
+			background-color:azure;
+			font-family:serif; 
+			margin:20px 0px 20px 0px;
+		}
+#formtitle{
+	        text-align:center;
+			color:red;
+			background-color:azure;
+			font-family:serif; 
+			margin:20px 0px 20px 0px;
+}
+div{
+			color:black;
+			background-color:azure; 
+			border:3px solid black;
+			margin:0px 0px 40px 200px;
+            width:800px;
+            height: 700px;
+			padding:20px 20px 10px 30px;
+			align-content:top;
+
+		}
+.homed{
+			color:black;
+			background-color:azure; 
+			border:3px solid black;
+			margin:0px 0px 40px 200px;
+            width:800px;
+            height: 100px;
+			padding:20px 20px 10px 30px;
+			align-content:top;
+
+		}
+
+
+#formdiv{
+			color:black;
+			background-color:azure; 
+			border:3px solid black;
+			margin:0px 0px 30px 200px;
+            width:900px
+
+			padding:0px 20px 10px 30px;
+		}
+div:hover{
+            color:gray;
+}		
+.subtitle{
+			padding-left:200px; 
+			margin-bottom:20px; 
+		}
+.subtitle:hover{
+	color:skyblue;
+
+}
+#mainpagebutton{
+			margin:10px 0px 0px 600px;
+			color:white;
+		}
+#formpagebutton{
+			margin:10px 0px 0px 200px;
+			color:white;
+		}
+div a:link
+{
+      color:green;
+}
+div a:visited
+{
+      color:green;
+}
+div a:hover
+{
+      color:orange;
+}
+div a:active
+{
+      color:green;
+}
+button a:visited
+{
+      color:white;
+}
+table{
+margin:50px 10px 200px 10px;
+}
+#formsubtitle{
+	margin:20px 0px 0px 20px;
+}
+#imp{
+	margin-top: 50px;
+	margin-left: 30px;
+}
+#errordisplay{
+	width: 200px;
+	height: 20px;
+}

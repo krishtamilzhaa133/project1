@@ -1,0 +1,99 @@
+ <div>
+                    <label for="country-select">Country:</label>
+                    <select id="country-select">
+                      <option hidden selected>Select a country</option>
+                    </select>
+                  </div>
+
+
+
+                  <script type="text/javascript">
+   $(document).ready(function(){
+    $.getJSON('https://restcountries.com/v3.1/all',function(countries){
+      var countrySelect=$('#country-select');
+      $.each(countries,function(index,country){
+        countrySelect.append($('<option>').val(country.name.common).text(country.name.common));
+            });
+    });
+  });
+    
+ </script>
+ *******************************************************************************************************
+ <script type="text/javascript">
+    function submitfetch(){
+      var name=$('#sname1').val();
+      var fage=$('#sage1').val();
+      $.ajax({
+        type:'POST',
+        url:'ajax.php',
+        data:{name:name,fage:fage},
+        success:function(response){
+          //alert('data submitted successfully');
+          $('#sname1').val('');
+          $('#sage1').val('');
+          $('#datacontainer').html(response);
+        },
+        error:function(){
+          alert('error submitting data failed');
+        }
+      });
+ }
+
+    $(document).ready(function(){
+      $('#sbtn').click(function(e){
+        e.preventDefault();
+        $.ajax({
+          method:"post",
+          url:"ajax.php",
+          dataType:"html",
+          success:function(response){
+            $('#datacontainer').html(response);
+          }
+
+        });
+      })
+    });
+  </script>
+***********************************************************************************************
+if($name!="" && $fage!=""){
+$ins="INSERT into secoundtable (uname,age) values ('$name',$fage)";
+ if(mysqli_query($con,$ins)){
+ 	echo "Data Inserted Successfully!";
+ 	}
+ else{
+ 	echo "Data Inserted Problem";
+ }
+}
+
+ 
+ $que="SELECT * From secoundtable";
+ $querun=mysqli_query($con,$que);
+ echo "<table width=80%; border=2 ;cellpadding=5;>";
+ echo "<tr><th>ID</th><th>NAME</th><th>AGE</th></tr>";
+ if($querun){
+ 	while($row=mysqli_fetch_array($querun)) {
+ 		echo "
+ 		<tr><td>$row[id]</td>
+ 		<td>$row[uname]</td>
+ 		<td>$row[age]</td>
+ 		</tr>";
+ 	}
+ }
+ else{
+ 	echo "no records found";
+ }
+echo "</table>";
+
+
+
+function  funValidate(){
+   var fun2=submitdata();
+  var fun1=jsvalidation();
+ 
+  if(fun2 && fun1){
+    console.log('submit successfully');
+  }
+  else {
+    console.log('submit failure');
+  }
+}
